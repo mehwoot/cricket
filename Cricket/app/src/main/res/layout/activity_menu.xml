@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc"
+    tools:context=".FullscreenActivity">
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Game"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="40dp"
+            android:minWidth="200dp"
+            android:onClick="startButtonClick" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Team"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="200dp" />
+    </LinearLayout>
+
+</FrameLayout>
