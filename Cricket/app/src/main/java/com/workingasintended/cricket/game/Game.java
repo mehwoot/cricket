@@ -24,6 +24,10 @@ public class Game {
         return team2;
     }
 
+    public Shot getNextShot() {
+        return new Shot();
+    }
+
     public static Game getRandom() {
         Game game = new Game();
         game.setTeam1(Team.getRandom());

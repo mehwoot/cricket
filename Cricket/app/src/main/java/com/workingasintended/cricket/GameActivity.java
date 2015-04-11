@@ -1,6 +1,8 @@
 package com.workingasintended.cricket;
 
+import com.workingasintended.cricket.UI.AccuracyPicker;
 import com.workingasintended.cricket.game.Game;
+import com.workingasintended.cricket.game.Shot;
 import com.workingasintended.cricket.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -8,11 +10,15 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.view.SurfaceView;
 import android.view.View;
 import android.content.Intent;
 import android.view.Window;
 import android.view.WindowManager;
+
+import java.util.List;
 
 
 /**
@@ -55,15 +61,18 @@ public class GameActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        game = Game.getRandom();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_game);
-        game = Game.getRandom();
 
+        AccuracyPicker s = (AccuracyPicker)findViewById(R.id.surfaceView);
+        Shot shot = game.getNextShot();
+        s.setShot(shot);
+        s.invalidate();
     }
 
     @Override
@@ -73,16 +82,15 @@ public class GameActivity extends Activity {
     }
 
     public void onClick(View v) {
-        Intent intent = new Intent(this, ScorecardActivity.class);
-        startActivity(intent);
-    }
+        //Intent intent = new Intent(this, ScorecardActivity.class);
+        //startActivity(intent);
 
-    View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            return false;
-        }
-    };
+        //surfaceView.
+
+        AccuracyPicker s = (AccuracyPicker)findViewById(R.id.surfaceView);
+        s.stop();
+
+    }
 
 
 }

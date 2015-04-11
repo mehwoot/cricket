@@ -15,7 +15,8 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_margin="30dp">
+        android:layout_margin="30dp"
+        android:onClick="onClick">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,5 +25,12 @@
             android:text="Here is the game view"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
+
+        <com.workingasintended.cricket.UI.AccuracyPicker
+            android:layout_width="@android:dimen/thumbnail_width"
+            android:layout_height="50dp"
+            android:id="@+id/surfaceView"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 </FrameLayout>
