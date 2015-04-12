@@ -29,10 +29,10 @@ public class AccuracyPicker extends SurfaceView {
         if (this.shot != null) {
             Paint p = new Paint();
 
+            
             int width = canvas.getWidth();
             int height = canvas.getHeight();
             int margins = width / 8;
-            
             int centreSize = width - (margins * 2);
             int yellowStart = margins + (int)(centreSize * (shot.targetPosition - (shot.yellowWidth / 2.0)));
             int yellowEnd = margins + (int)(centreSize * (shot.targetPosition + (shot.yellowWidth / 2.0)));
